@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+
+
+	<ui:composition template="/resources/template/template.xhtml">
+		
+		<ui:define name="js"> <h:outputScript library="js" name="member.js" /> </ui:define>
+		
+		<ui:define name="title">
+			Üye Ekle
+		</ui:define>
+		
+		<ui:define name="content">
+			
+			<div class="row" style="padding-top: 20px">
+				<div class="col-xs-6">
+					<p:panel header="Üye Kayıt Formu" styleClass="bg-info">
+						<h:form styleClass="register-member">
+							<h:panelGrid columns="2" rowClasses="col-xs-12" columnClasses="col-xs-5" styleClass="table table-lg">
+							
+								<p:outputLabel for="tc" value="Tc  :" styleClass="col-xs-12"/>
+								<p:inputText id="tc" styleClass="tc" >
+									<p:keyFilter regEx="/[0-9_]/i"></p:keyFilter>
+								</p:inputText>
+								
+								<p:outputLabel for="name" value="İsim : " styleClass="col-xs-12" />
+								<p:inputText id="name" styleClass="name" />
+								
+								<p:outputLabel for="surname" value="Soyisim : " styleClass="col-xs-12"/>
+								<p:inputText id="surname" styleClass="surname" />
+								
+								<p:outputLabel for="phone" value="Telefon : " styleClass="col-xs-12"/>
+								<p:inputMask id="phone" mask="(999) 999-99-99" styleClass="phone" />
+								
+								<p:outputLabel for="registerDate" value="Register Date : " styleClass="col-xs-12" />
+								<p:calendar id="registerDate" styleClass="registerDate" value="#{dateComponent.date}" pattern="yyyy-mm-dd" mask="9999-99-99"/>
+								
+								<p:commandButton value="Kayıt Et" type="submit" ajax="false" styleClass="col-xs-12"/>
+								<p:commandButton value="Reset" type="reset" ajax="false" style="float:right;" styleClass="col-xs-12 reset" />
+								
+							</h:panelGrid>
+							<p:messages autoUpdate="true" showDetail="true"  closable="true"/>
+							<h:commandButton id="getSuccessMessage" styleClass="getSuccessMessage" action="#{operationResultBean.success('Üye başarıyla kayıt edildi.')}" style="display:none" value="success"> 
+								<f:ajax execute="getSuccessMessage" render="getSuccessMessage"></f:ajax>
+							</h:commandButton>
+							<h:commandButton id="getErrorMessage" styleClass="getErrorMessage" action="#{operationResultBean.error('Üye kayıt edilirken , hata oluştu.')}" style="display:none" value="error"> 
+								<f:ajax execute="getErrorMessage" render="getErrorMessage"></f:ajax>
+							</h:commandButton>
+						</h:form>
+					</p:panel>			
+				</div>
+				<div class="col-xs-6">
+					<p:dataTable scrollable="true" scrollHeight="340" styleClass="bg-info table rounded memberTable">
+						
+						<f:facet name="header"> Üye Listesi </f:facet>
+						
+						<p:column headerText="Tc"></p:column>
+						
+						<p:column headerText="İsim"></p:column>
+						
+						<p:column headerText="Soyisim"></p:column>
+						
+						<p:column headerText="Phone"></p:column>
+						
+						<p:column headerText="Kayıt Tarihi"></p:column>
+						
+					</p:dataTable>
+					<p:button value="Yenile" styleClass="refresh" onclick="return false;"></p:button>				</div>
+			</div>
+			
+		</ui:define>
+		
+		
+	</ui:composition>
+
+
+
+</body> 
+</html>

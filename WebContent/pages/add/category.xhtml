@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+	
+</h:head> 
+<body> 
+
+	<ui:composition template="/resources/template/template.xhtml">
+		
+		<ui:define name="js"> <h:outputScript library="js" name="category.js" /> </ui:define>
+		
+		<ui:define name="title">
+			Kategori Ekle
+		</ui:define>
+		
+		<ui:define name="content">
+			<div class="row" style="padding-top: 20px">
+				<div class="col-xs-6">
+					<p:panel header="Kategori Ekleme Formu" styleClass="bg-info" >
+						<h:form id="register-category" styleClass="register-category">
+							<h:panelGrid columns="3" rowClasses="col-xs-12" columnClasses="col-xs-3">
+								
+								<p:outputLabel for="name" styleClass="col-xs-12 lead" value="Name: " />
+								<p:inputText id="name" styleClass="col-xs-12 name" />
+								<p:commandButton value="Ekle" type="submit" ajax="false" styleClass="col-xs-12 push-xs-1"/>
+								
+							</h:panelGrid>
+							<h:commandButton id="getSuccessMessage" styleClass="getSuccessMessage" action="#{operationResultBean.success('Kategori başarıyla kayıt edildi.')}" style="display:none" value="success"> 
+								<f:ajax execute="getSuccessMessage" render="getSuccessMessage"></f:ajax>
+							</h:commandButton>
+							<h:commandButton id="getErrorMessage" styleClass="getErrorMessage" action="#{operationResultBean.error('Kategori kayıt edilirken , hata oluştu.')}" style="display:none" value="error"> 
+									<f:ajax execute="getErrorMessage" render="getErrorMessage"></f:ajax>
+							</h:commandButton>
+						</h:form>	
+						<p:messages autoUpdate="true" closable="true" showDetail="true" showIcon="true" />
+					</p:panel>
+				</div>
+				<div class="col-xs-6">
+					<p:dataTable styleClass="categoryTable bg-info" style="float:left; width:100%" scrollable="true" scrollHeight="395" >
+		
+						<f:facet name="header">Category Listesi</f:facet>					
+						
+						<p:column headerText="İsmi"> </p:column>
+						
+					</p:dataTable>
+					<p:button value="Yenile" styleClass="refresh" onclick="return false;"></p:button>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+
+
+</body> 
+</html>

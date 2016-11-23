@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+	<ui:insert name="js"></ui:insert>
+	<ui:insert name="css"></ui:insert>
+<!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Bootstrap CSS -->
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+    
+    <h:outputStylesheet library="css" name="common-style.css" />
+    
+    <title><ui:insert name="title"></ui:insert></title>
+</h:head>
+<body> 
+
+	<div class="container">
+		
+		<div class="row" style="background-image: url('/12-WebServiceWithJSF/javax.faces.resource/kutuphane_header.jpg.xhtml?ln=image'); background-size: 100% 100%;">
+			<div class="col-xs-12 header">
+				<ui:insert name="header">
+					<ui:include src="/resources/template/header.xhtml" />
+				</ui:insert>
+			</div>
+		</div>
+		
+		<div class="row" >
+			<div class="col-xs-12 menu" >
+				<ui:insert name="menu">
+					<ui:include src="/resources/template/menu.xhtml" />
+				</ui:insert>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12 content">
+				<ui:insert name="content">
+					<ui:include src="/resources/template/content.xhtml" />
+				</ui:insert>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12 footer">
+				<ui:insert name="footer">
+					<ui:include src="/resources/template/footer.xhtml" />
+				</ui:insert>
+			</div>
+		</div>
+		
+	</div>
+	
+	<!-- jQuery first, then Tether, then Bootstrap JS. -->
+	<h:outputScript library="js" name="bootstrap.min.js" />
+</body> 
+</html>
