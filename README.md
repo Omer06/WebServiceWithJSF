@@ -24,7 +24,7 @@ Projeyi deploy etmek için(Eclipse) :
 purpose of the project , make to transfer data between jersey and jsf(xhtml)
 
 * Improved project in java and used some frameworks.
-* The frameworks is : Back-End { Spring (context,mvc,security,aop) , Hibernate } and Front-End{ jsp,css(not used framework),jquery,ajax };
+* The frameworks is : Back-End { Spring (context,mvc,security,aop) , Hibernate } and Front-End{ jsp,css(bootstrap),jquery,ajax };
 * Server-Container : Tomcat 9
 
 For run the project(Eclipse) : 
