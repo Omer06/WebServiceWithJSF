@@ -17,14 +17,16 @@ Projeyi deploy etmek için(Eclipse) :
 * Project explorer sekmesinden sağa tıklayıp, import'a tıklayın.
 * Egit klasörünün altında "import from egit"  tıklayın
 * Gelen pencerede , proje ile alakalı bilgileri doldurup , projelerinize dahil edebilirsiniz.
-* Projeyi deploy etmeden önce bir veritabanı(name = library , port=3306 , mysql) oluşturun. 
+* Projeyi tomcatte deploy etmeden önce bir veritabanı(name = library , port=3306 , mysql) oluşturun. 
 
 # English-İngilizce : 
 
 purpose of the project , make to transfer data between jersey and jsf(xhtml)
 
+~ A library project(yet not finished) ~
+
 * Improved project in java and used some frameworks.
-* The frameworks is : Back-End { Spring (context,mvc,security,aop) , Hibernate } and Front-End{ jsp,css(bootstrap),jquery,ajax };
+* The frameworks is : Back-End { jersey , Spring (context,aop) , Hibernate } , Front-End{ jsf(xhtml),css(bootstrap),jquery,ajax};
 * Server-Container : Tomcat 9
 
 For run the project(Eclipse) : 
