@@ -3,7 +3,7 @@ Build a web service with jersey. transfer data to jsf via ajax  ~  written in ja
 
 # Türkçe-Turkish : 
 
-Projenin amacı , ajax ile jersey ve jsf(xhtml) arasında veri transferi yapmak.
+Projenin amacı , jersey ve jsf(xhtml) arasında ajax aracılığıyla veri transferi yapmak.
 
 ~ Bir kütüphane projesi(Henüz bitirilmedi) ~
 
@@ -11,7 +11,7 @@ Projenin amacı , ajax ile jersey ve jsf(xhtml) arasında veri transferi yapmak.
 * Bu frameworkler : Back-End { jersey , Spring (context,aop) , Hibernate } , Front-End{ jsf(xhtml),css(bootstrap),jquery,ajax};
 * Server-Container : Tomcat 9
 
-Projeyi deploy etmek için(Eclipse) : 
+Projeyi çalıştırmak(run) için(Eclipse) : 
 
 * Mağzadan egit eklentisini kurun.
 * Project explorer sekmesinden sağa tıklayıp, import'a tıklayın.
@@ -21,7 +21,7 @@ Projeyi deploy etmek için(Eclipse) :
 
 # English-İngilizce : 
 
-purpose of the project , make to transfer data between jersey and jsf(xhtml)
+purpose of the project , make to transfer data between jersey and jsf(xhtml) via ajax
 
 ~ A library project(yet not finished) ~
 
